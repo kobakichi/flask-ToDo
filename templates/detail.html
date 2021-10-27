@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+<!-- トップページから、詳細をクリックした先のページ -->
+{% block body %}
+  <h2>タスク詳細</h2>
+
+  <h2>タイトル : {{ post.title }}</h2>
+  <p>詳細内容 : {{ post.detail }}</p>
+  <p>完了期限 : {{ post.due.date() }}</p>
+{% endblock %}

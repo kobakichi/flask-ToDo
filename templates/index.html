@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="header">
+  <h1>flask todo トップページ</h1>
+</div>
+  <a href="/create" class="button" role="button">タスクを新規作成する</a>
+{% for post in posts %}
+<div class="task">
+  <h2>タイトル : {{ post.title }}</h2>
+  <p>完了期限 : {{ post.due.date() }}</p>
+  <a href="/detail/{{ post.id }}" role="button">タスク詳細へ</a>
+  <a href="/update/{{ post.id }}" role="button">変更する</a>
+  <a href="/delete/{{ post.id }}" role="button">削除する</a>
+</div>
+{% endfor %}
+{% endblock %}

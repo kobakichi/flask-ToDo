@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="form">
+  <!-- 値を入力してsubmitすると、POSTメソッドでトップページへ送る処理 -->
+  <form action="/" method="POST">
+    <label for="title">タイトル</label>
+    <input type="text" name="title">
+    <label for="detail">タスク詳細</label>
+    <input type="text" name="detail">
+    <label for="date">完了期限</label>
+    <input type="date" name="due" required>
+    <input type="submit" value="作成する">
+  </form>
+</div>
+{% endblock %}

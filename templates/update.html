@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+<!-- 編集画面 -->
+{% block body %}
+<h2>タスクを編集する</h2>
+<div class="form">
+  <!-- 値を入力してsubmitすると、POSTメソッドでトップページへ送る処理 -->
+  <form action="/update/{{ post.id }}" method="POST">
+    <label for="title">タイトル</label>
+    <input type="text" name="title" value={{ post.title }}>
+    <label for="detail">タスク詳細</label>
+    <input type="text" name="detail" value={{ post.detail }}>
+    <label for="due">完了期限</label>
+    <input type="date" name="due" value={{ post.due.date() }} required>
+    <input type="submit" value="変更する">
+  </form>
+</div>
+{% endblock %}
